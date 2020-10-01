@@ -1,4 +1,4 @@
-import Client from './Client'
+import DashXClient from './DashXClient'
 
 type Params = {
   baseUri: string,
@@ -7,5 +7,5 @@ type Params = {
 }
 
 export default {
-  createClient: (params: Params): Client => new Client(params)
+  createClient: (params: Params): DashXClient => new DashXClient(params)
 }

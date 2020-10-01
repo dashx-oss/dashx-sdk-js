@@ -1,10 +1,16 @@
-import http from 'got'
 import uuid from 'uuid-random'
 import type { Response } from 'got'
 
 import ContentOptionsBuilder from './ContentOptionsBuilder'
-import { snakeCaseKeys } from './utils'
+import HttpClient from './HttpClient'
 import type { ContentOptions } from './ContentOptionsBuilder'
+
+type Config = {
+  baseUri?: string,
+  publicKey?: string,
+  privateKey?: string,
+  contentCache?: number
+}
 
 type Parcel = {
   to: string[] | string,
@@ -19,40 +25,21 @@ type IdentifyParams = {
   phone?: string
 }
 
-class Client {
-  publicKey?: string
-
-  privateKey?: string
-
-  baseUri: string
+class DashXClient extends HttpClient {
+  contentCacheTimeout?: number
 
   constructor({
     baseUri = process.env.DASHX_BASE_URI || 'https://api.dashx.com/v1',
     publicKey = process.env.DASHX_PUBLIC_KEY,
-    privateKey = process.env.DASHX_PRIVATE_KEY
-  } = {}) {
-    this.baseUri = baseUri
-    this.publicKey = publicKey
-    this.privateKey = privateKey
-  }
-
-  private makeHttpRequest<T>(uri: string, body: T): Promise<Response> {
-    return http(uri, {
-      json: snakeCaseKeys(body),
-      method: 'POST',
-      prefixUrl: this.baseUri,
-      headers: {
-        'User-Agent': 'dashx-node',
-        'X-Public-Key': this.publicKey,
-        'X-Private-Key': this.privateKey,
-        'Content-Type': 'application/json'
-      },
-      responseType: 'json'
-    })
+    privateKey = process.env.DASHX_PRIVATE_KEY,
+    contentCache
+  }: Config = {}) {
+    super(baseUri, publicKey, privateKey)
+    this.contentCacheTimeout = contentCache
   }
 
   deliver(parcel: Parcel): Promise<Response> {
-    return this.makeHttpRequest('/deliver', parcel)
+    return this.create().makeRequest('/deliver', parcel)
   }
 
   identify(uid: string, options?: IdentifyParams) : Promise<Response>
@@ -71,24 +58,28 @@ class Client {
       }
     }
 
-    return this.makeHttpRequest('/identify', params)
+    return this.create().makeRequest('/identify', params)
   }
 
   track(event: string, uid: string, data: Record<string, any>): Promise<Response> {
-    return this.makeHttpRequest('/track', { event, uid, data })
+    return this.create().makeRequest('/track', { event, uid, data })
   }
 
   content(
     contentType: string, options?: ContentOptions
   ): ContentOptionsBuilder | Promise<Response> {
     if (options) {
-      return this.makeHttpRequest('/content', { ...options, contentType })
+      return this.create()
+        .setCacheTimeout(options.cache || this.contentCacheTimeout)
+        .makeRequest('/content', { ...options, contentType })
     }
 
     return new ContentOptionsBuilder(
-      (wrappedOptions) => this.makeHttpRequest('content', { ...wrappedOptions, contentType })
+      (wrappedOptions) => this.create()
+        .setCacheTimeout(wrappedOptions.cache || this.contentCacheTimeout)
+        .makeRequest('content', { ...wrappedOptions, contentType })
     )
   }
 }
 
-export default Client
+export default DashXClient

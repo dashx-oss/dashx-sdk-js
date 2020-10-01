@@ -5,7 +5,8 @@ export type ContentOptions = {
   filter?: Record<string, boolean | string | number>,
   order?: Record<string, 'ASC' | 'DESC'>,
   limit?: number,
-  page?: number
+  page?: number,
+  cache?: number
 }
 
 class ContentOptionsBuilder {
@@ -27,6 +28,11 @@ class ContentOptionsBuilder {
 
   filter(by: ContentOptions['filter']) {
     this.options.filter = by
+    return this
+  }
+
+  cache(timeout: ContentOptions['cache']) {
+    this.options.cache = timeout
     return this
   }
 
