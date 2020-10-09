@@ -19,6 +19,11 @@ class ContentOptionsBuilder {
     return this
   }
 
+  cache(timeout) {
+    this.options.cache = timeout
+    return this
+  }
+
   all(withOptions) {
     this.options = { ...this.options, ...withOptions, returnType: 'all' }
     return this.callback(this.options)

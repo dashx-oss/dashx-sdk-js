@@ -28,4 +28,6 @@ DashX.track('Added Product to Cart', {
   coupon: null
 });
 
+DashX.content('pages').cache(5 * 60 /* in seconds */).all();
+
 AppRegistry.registerComponent(appName, () => App);
