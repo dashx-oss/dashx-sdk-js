@@ -33,9 +33,9 @@ class DashXModule(private val reactContext: ReactApplicationContext) : ReactCont
             DashXActivityLifecycleCallbacks.enableScreenTracking(reactContext.applicationContext)
         }
 
-        if (options.hasKey("baseUri")) {
-            options.getString("baseUri")?.let { it -> dashXClient.setBaseURI(it) }
-        }
+        options.getStringIfPresent("baseUri")?.let { it -> dashXClient.setBaseUri(it) }
+
+        options.getIntIfPresent("contentCache")?.let { it -> dashXClient.setContentCacheTimeout(it) }
 
         FirebaseInstanceId.getInstance().instanceId
             .addOnCompleteListener(OnCompleteListener { task ->

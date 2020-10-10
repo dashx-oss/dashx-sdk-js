@@ -25,6 +25,10 @@ class DashX: NSObject {
         if let trackScreenViews = options?.value(forKey: "trackScreenViews"), trackScreenViews as! Bool {
             UIViewController.swizzle()
         }
+        
+        if let contentCacheTimeout = options?.value(forKey: "contentCache") {
+            dashXClient.setContentCacheTimeout(to: contentCacheTimeout as? Int)
+        }
 
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {

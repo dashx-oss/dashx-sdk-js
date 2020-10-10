@@ -2,17 +2,20 @@ import Foundation
 
 struct IdentifyRequest: Encodable {
     let firstName, lastName, email, phone, anonymousUid: String?
+    let requestId: String = UUID().uuidString
 }
 
 struct TrackRequest: Encodable {
     let event: String
     let anonymousUid, uid: String?
     let data: JSONValue?
+    let requestId: String = UUID().uuidString
 }
 
 struct SubscribeRequest: Encodable {
     let value, kind: String
     let anonymousUid, uid: String?
+    let requestId: String = UUID().uuidString
 }
 
 struct ContentRequest: Encodable {
@@ -20,6 +23,7 @@ struct ContentRequest: Encodable {
     let returnType: String?
     let limit, page: Int?
     let filter, order: JSONValue?
+    let requestId: String = UUID().uuidString
 }
 
 public enum JSONValue: Decodable, Encodable {
