@@ -1,27 +1,5 @@
 import Foundation
 
-struct IdentifyRequest: Encodable {
-    let firstName, lastName, email, phone, anonymousUid: String?
-}
-
-struct TrackRequest: Encodable {
-    let event: String
-    let anonymousUid, uid: String?
-    let data: JSONValue?
-}
-
-struct SubscribeRequest: Encodable {
-    let value, kind: String
-    let anonymousUid, uid: String?
-}
-
-struct ContentRequest: Encodable {
-    let contentType: String
-    let returnType: String?
-    let limit, page: Int?
-    let filter, order: JSONValue?
-}
-
 struct FirebaseRemoteMessage: Decodable {
     let aps: APS
 

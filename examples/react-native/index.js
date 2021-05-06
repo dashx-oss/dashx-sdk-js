@@ -13,9 +13,8 @@ DashX.setLogLevel(0);
 
 DashX.setup({
   publicKey: Config.DASHX_PUBLIC_KEY,
-  baseUri: 'http://api.dashx-staging.com/v1',
-  trackAppLifecycleEvents: true,
-  trackScreenViews: true
+  baseUri: 'http://api.dashx-local.com:8080/graphql',
+  accountType: 'individual',
 });
 
 DashX.identify({ firstName: 'John', lastName: 'Doe' });

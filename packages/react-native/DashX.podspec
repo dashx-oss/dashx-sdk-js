@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "Alamofire", "~> 5.2"
+  s.dependency "Apollo"
   s.dependency "FirebaseInstanceID"
   s.dependency "Firebase/Messaging"
   # ...

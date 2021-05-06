@@ -21,12 +21,21 @@ class DashX: RCTEventEmitter {
 
     @objc
     func setup(_ options: NSDictionary?) {
-        dashXClient.setPublicKey(to: options?.value(forKey: "publicKey") as! String)
+        ConfigInterceptor.shared.publicKey = options?.value(forKey: "publicKey") as? String
+        dashXClient.setAccountType(to: options?.value(forKey: "accountType") as! String)
 
         DashXAppDelegate.swizzleDidReceiveRemoteNotification()
 
         if let baseUri = options?.value(forKey: "baseUri") {
-            dashXClient.setBaseUri(to: baseUri as! String)
+            Network.shared.setBaseUri(to: baseUri as! String)
+        }
+
+        if let targetInstallation = options?.value(forKey: "targetInstallation") {
+            dashXClient.setTargetInstallation(to: targetInstallation as! String)
+        }
+
+        if let targetEnvironment = options?.value(forKey: "targetEnvironment") {
+            dashXClient.setTargetInstallation(to: targetEnvironment as! String)
         }
 
         if let trackAppLifecycleEvents = options?.value(forKey: "trackAppLifecycleEvents"), trackAppLifecycleEvents as! Bool {
@@ -70,10 +79,5 @@ class DashX: RCTEventEmitter {
     @objc(screen:data:)
     func screen(_ screenName: String, _ data: NSDictionary?) {
         dashXClient.screen(screenName, withData: data)
-    }
-
-    @objc(content:options:)
-    func content(_ contentType: String, _ options: NSDictionary) {
-        dashXClient.content(contentType, withOptions: options)
     }
 }

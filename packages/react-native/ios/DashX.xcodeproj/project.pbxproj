@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71050BB925E3B8C3008EA385 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71050BB825E3B8C3008EA385 /* Network.swift */; };
 		7167F91B250F97BA0078BFFB /* DashXApplicationLifecycleCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167F91A250F97BA0078BFFB /* DashXApplicationLifecycleCallbacks.swift */; };
 		7167F91D250F97E10078BFFB /* DashXUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167F91C250F97E10078BFFB /* DashXUIViewController.swift */; };
 		71758CAB25038D00007197D5 /* DashXData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71758CAA25038D00007197D5 /* DashXData.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libDashX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDashX.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71050BB825E3B8C3008EA385 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; usesTabs = 0; };
 		7167F91A250F97BA0078BFFB /* DashXApplicationLifecycleCallbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashXApplicationLifecycleCallbacks.swift; sourceTree = "<group>"; };
 		7167F91C250F97E10078BFFB /* DashXUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashXUIViewController.swift; sourceTree = "<group>"; };
 		71758CAA25038D00007197D5 /* DashXData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashXData.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				71050BB825E3B8C3008EA385 /* Network.swift */,
 				71A405A3251B09D300230332 /* Utils.swift */,
 				71829DAC2519BAD50024EF73 /* DashXAppDelegate.swift */,
 				71829DAA2519BABA0024EF73 /* DashXEventEmitter.swift */,
@@ -158,6 +161,7 @@
 			files = (
 				71FCBF1B25036BC000EE19F0 /* Constants.swift in Sources */,
 				71FCBF1025001E9200EE19F0 /* DashX.m in Sources */,
+				71050BB925E3B8C3008EA385 /* Network.swift in Sources */,
 				71758CAB25038D00007197D5 /* DashXData.swift in Sources */,
 				71829DAD2519BAD50024EF73 /* DashXAppDelegate.swift in Sources */,
 				7167F91D250F97E10078BFFB /* DashXUIViewController.swift in Sources */,
