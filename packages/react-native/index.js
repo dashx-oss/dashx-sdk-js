@@ -1,11 +1,11 @@
 import { NativeEventEmitter, NativeModules } from 'react-native'
 
-import ContentOptionsBuilder from './ContentOptionsBuilder'
+import ContentTypeOptionsBuilder from './ContentTypeOptionsBuilder'
 
 const { DashX } = NativeModules
 const dashXEventEmitter = new NativeEventEmitter(DashX)
 
-const { identify, track, content } = DashX
+const { identify, track, contentType } = DashX
 
 // Handle overloads at JS, because Native modules doesn't allow that
 // https://github.com/facebook/react-native/issues/19116
@@ -19,13 +19,13 @@ DashX.identify = (options) => {
 
 DashX.track = (event, data) => track(event, data || null)
 
-DashX.content = (contentType, options) => {
+DashX.contentType = (contentTypeIdentifier, options) => {
   if (options) {
-    return content(contentType, options)
+    return contentType(contentTypeIdentifier, options)
   }
 
-  return new ContentOptionsBuilder(
-    wrappedOptions => content(contentType, wrappedOptions)
+  return new ContentTypeOptionsBuilder(
+    wrappedOptions => contentType(contentTypeIdentifier, wrappedOptions)
   )
 }
 

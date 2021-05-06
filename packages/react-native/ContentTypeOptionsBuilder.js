@@ -1,4 +1,4 @@
-class ContentOptionsBuilder {
+class ContentTypeOptionsBuilder {
   constructor(callback) {
     this.options = {}
     this.callback = callback
@@ -30,4 +30,4 @@ class ContentOptionsBuilder {
   }
 }
 
-export default ContentOptionsBuilder
+export default ContentTypeOptionsBuilder

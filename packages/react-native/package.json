@@ -8,6 +8,7 @@
     "README.md",
     "android",
     "index.js",
+    "ContentTypeOptionsBuilder.js",
     "ios",
     "react-native.podspec"
   ],
