@@ -1,6 +1,4 @@
-import type { Response } from 'got'
-
-import { parseFilterObject } from './utils'
+import { parseFilterOrderObject } from './utils'
 
 export type ContentOptions = {
   returnType?: 'all' | 'one',
@@ -29,54 +27,54 @@ class ContentOptionsBuilder {
     this.callback = callback
   }
 
-  limit(by: ContentOptions['limit']) {
+  limit(by: ContentOptions['limit']): ContentOptionsBuilder {
     this.options.limit = by
     return this
   }
 
-  filter(by: ContentOptions['filter']) {
-    this.options.filter = parseFilterObject(by)
+  filter(by: ContentOptions['filter']): ContentOptionsBuilder {
+    this.options.filter = parseFilterOrderObject(by)
     return this
   }
 
-  order(by: ContentOptions['order']) {
-    this.options.order = by
+  order(by: ContentOptions['order']): ContentOptionsBuilder {
+    this.options.order = parseFilterOrderObject(by)
     return this
   }
 
-  language(to: ContentOptions['language']) {
+  language(to: ContentOptions['language']): ContentOptionsBuilder {
     this.options.language = to
     return this
   }
 
-  fields(identifiers: ContentOptions['fields']) {
+  fields(identifiers: ContentOptions['fields']): ContentOptionsBuilder {
     this.options.fields = identifiers
     return this
   }
 
-  include(identifiers: ContentOptions['include']) {
+  include(identifiers: ContentOptions['include']): ContentOptionsBuilder {
     this.options.include = identifiers
     return this
   }
 
-  exclude(identifiers: ContentOptions['exclude']) {
+  exclude(identifiers: ContentOptions['exclude']): ContentOptionsBuilder {
     this.options.exclude = identifiers
     return this
   }
 
-  preview() {
+  preview(): ContentOptionsBuilder {
     this.options.preview = true
     return this
   }
 
-  all(withOptions: ContentOptions) {
+  all(withOptions: ContentOptions): Promise<any> {
     this.options = { ...this.options, ...withOptions, returnType: 'all' }
     return this.callback(this.options)
   }
 
-  one(withOptions: ContentOptions) {
+  one(withOptions: ContentOptions): Promise<any> {
     this.options = { ...this.options, ...withOptions, returnType: 'one' }
-    return this.callback(this.options).then(data => Array.isArray(data) ? data[0] : null)
+    return this.callback(this.options).then((data) => (Array.isArray(data) ? data[0] : null))
   }
 }
 

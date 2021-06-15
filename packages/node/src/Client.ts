@@ -5,7 +5,7 @@ import type { Response } from 'got'
 
 import ContentOptionsBuilder from './ContentOptionsBuilder'
 import { deliverRequest, identifyAccountRequest, trackEventRequest, addContentRequest, editContentRequest, fetchContentRequest, searchContentRequest } from './graphql'
-import { parseFilterObject } from './utils'
+import { parseFilterOrderObject } from './utils'
 import type { ContentOptions, FetchContentOptions } from './ContentOptionsBuilder'
 
 type Parcel = {
@@ -150,11 +150,12 @@ class Client {
     contentType: string, options?: ContentOptions
   ): ContentOptionsBuilder | Promise<any> {
     if (options) {
-      let filter = parseFilterObject(options.filter)
+      let filter = parseFilterOrderObject(options.filter)
+      let order = parseFilterOrderObject(options.order)
       
       let response = this.makeHttpRequest(
         searchContentRequest,
-        { ...options, contentType, filter }
+        { ...options, contentType, filter, order }
       ).then(response => response?.searchContent)
 
       if (options.returnType == 'all') {

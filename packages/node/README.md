@@ -110,8 +110,8 @@ Content Options can include following properties:
 |**`fields`**|`array`|`['character', 'cast']`||
 |**`preview`**|`boolean`||
 |**`returnType`**|`'all'` or `'one'`||
-|**`filter`**|`object`|`{ name_eq: 'John' }`|
-|**`order`**|`object`|`{ created_at: 'DESC' }`|
+|**`filter`**|`object`|`{ name: { eq : 'John' } }`|
+|**`order`**|`object`|`{ _created_at: 'desc' }`|
 |**`limit`**|`number`||
 |**`page`**|`number`||
 
@@ -119,8 +119,8 @@ For example, to get latest contacts with name 'John' you can do:
 
 ```javascript
 dx.searchContent('contacts')
-  .filter({ name_eq: 'John' })
-  .order({ created_at: 'DESC' })
+  .filter({ name: { eq: 'John' } })
+  .order({ _created_at: 'desc' })
   .preview() // Sets preview to true
   .limit(10)
   .all() /* returnType */
@@ -135,10 +135,12 @@ The above code can also be written as:
 dx.searchContent('contacts', {
   returnType: 'all',
   filter: {
-    name_eq: 'John'
+    name: { 
+      eq: 'John' 
+    } 
   },
   order: {
-    created_at: 'DESC'
+    _created_at: 'desc'
   },
   preview: true,
   limit: 10

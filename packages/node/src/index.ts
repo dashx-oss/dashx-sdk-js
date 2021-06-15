@@ -1,9 +1,9 @@
 import Client from './Client'
 
 type Params = {
-  baseUri: string,
-  publicKey: string,
-  privateKey: string
+  baseUri?: string,
+  publicKey?: string,
+  privateKey?: string
 }
 
 export default {

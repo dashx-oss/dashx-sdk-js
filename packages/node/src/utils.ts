@@ -1,17 +1,19 @@
-export function parseFilterObject(filterObject: Record<string, any> = {}) {
-    const filterBy: Record<string, any> = {};
+/* eslint-disable import/prefer-default-export */
+export function parseFilterOrderObject(filterOrderObject: Record<string, any> = {})
+  : Record<string, any> {
+  const filterOrderBy: Record<string, any> = {}
 
-    Object.keys(filterObject).forEach(key => {
-        if (key.startsWith("_")) {
-            filterBy[key.substring(1)] = filterObject[key]
-            return
-        }
+  Object.keys(filterOrderObject).forEach((key) => {
+    if (key.startsWith('_')) {
+      filterOrderBy[key.substring(1)] = filterOrderObject[key]
+      return
+    }
 
-        filterBy.data = {
-            [key]: filterObject[key],
-            ...filterBy.data
-        }
-    })
+    filterOrderBy.data = {
+      [key]: filterOrderObject[key],
+      ...filterOrderBy.data
+    }
+  })
 
-    return filterBy
+  return filterOrderBy
 }
