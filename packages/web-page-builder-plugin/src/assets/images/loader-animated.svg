@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 221 221" style="background-color:#ffffff0b" overflow="visible">
+  <svg width=".01" height=".01" x="110" y="110" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.333333;1" repeatCount="indefinite" values="110;162;162"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.333333;1" repeatCount="indefinite" values="110;162;162"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="60" height="142" x="-30" y="-71" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.333333;1" repeatCount="indefinite" values="-71;-0.5;-0.5"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.333333;1" repeatCount="indefinite" values="142;1;1"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.32;0.333333;1" repeatCount="indefinite" values="1;1;0;0"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 132c0 5.486 4.514 10 10 10h40c5.486 0 10-4.514 10-10V10c0-5.486-4.514-10-10-10H10C4.514 0 0 4.514 0 10v122zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.333333;1" repeatCount="indefinite" values="M0,132c0,5.486,4.514,10,10,10 0,0,40,0,40,0 5.486,0,10,-4.514,10,-10 0,0,0,-122,0,-122 0,-5.486,-4.514,-10,-10,-10 0,0,-40,0,-40,0 -5.486,-0,-10,4.514,-10,10 0,0,0,122,0,122zM0,132;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="68" y="152" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;1" repeatCount="indefinite" values="68;68;16;16"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;1" repeatCount="indefinite" values="152;152;100;100"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="23" height="60" x="-11.5" y="-30" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;1" repeatCount="indefinite" values="-30;-30;-0.5;-0.5"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;1" repeatCount="indefinite" values="60;60;1;1"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.453333;0.466667;1" repeatCount="indefinite" values="1;1;0;0"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 50c0 5.486 4.514 10 10 10h3c5.486 0 10-4.514 10-10V10c0-5.486-4.514-10-10-10h-3C4.514 0 0 4.514 0 10v40zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;1" repeatCount="indefinite" values="M0,50c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-40,0,-40 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,40,0,40zM0,50;M0,50c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-40,0,-40 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,40,0,40zM0,50;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="150" y="70" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.0666667;0.4;1" repeatCount="indefinite" values="150;150;202;202"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.0666667;0.4;1" repeatCount="indefinite" values="70;70;122;122"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="23" height="60" x="-11.5" y="-30" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.0666667;0.4;1" repeatCount="indefinite" values="-30;-30;-0.5;-0.5"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.0666667;0.4;1" repeatCount="indefinite" values="60;60;1;1"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.32;0.333333;1" repeatCount="indefinite" values="1;1;0;0"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 50c0 5.486 4.514 10 10 10h3c5.486 0 10-4.514 10-10V10c0-5.486-4.514-10-10-10h-3C4.514 0 0 4.514 0 10v40zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.0666667;0.4;1" repeatCount="indefinite" values="M0,50c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-40,0,-40 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,40,0,40zM0,50;M0,50c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-40,0,-40 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,40,0,40zM0,50;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="58" y="58" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;0.8;1" repeatCount="indefinite" values="58;58;110;162;162"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;0.8;1" repeatCount="indefinite" values="58;58;110;162;162"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="60" height="1" x="-30" y="-.5" opacity="0" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;0.8;1" repeatCount="indefinite" values="-0.5;-0.5;-71;-0.5;-0.5"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;0.8;1" repeatCount="indefinite" values="1;1;142;1;1"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.133333;0.146667;0.786667;0.8;1" repeatCount="indefinite" values="0;0;1;1;0;0"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 .5c0 .274.226.5.5.5h59c.274 0 .5-.226.5-.5s-.226-.5-.5-.5H.5C.226 0 0 .226 0 .5zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.133333;0.466667;0.8;1" repeatCount="indefinite" values="M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,132c0,5.486,4.514,10,10,10 0,0,40,0,40,0 5.486,0,10,-4.514,10,-10 0,0,0,-122,0,-122 0,-5.486,-4.514,-10,-10,-10 0,0,-40,0,-40,0 -5.486,-0,-10,4.514,-10,10 0,0,0,122,0,122zM0,132;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="119" y="203" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.266667;0.6;0.933333;1" repeatCount="indefinite" values="119;119;68;16;16"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.266667;0.6;0.933333;1" repeatCount="indefinite" values="203;203;152;100;100"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="23" height="1" x="-11.5" y="-.5" opacity="0" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.266667;0.6;0.933333;1" repeatCount="indefinite" values="-0.5;-0.5;-71;-0.5;-0.5"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.266667;0.6;0.933333;1" repeatCount="indefinite" values="1;1;142;1;1"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.266667;0.28;0.92;0.933333;1" repeatCount="indefinite" values="0;0;1;1;0;0"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 .5c0 .274.226.5.5.5h22c.274 0 .5-.226.5-.5s-.226-.5-.5-.5H.5C.226 0 0 .226 0 .5zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.266667;0.6;0.933333;1" repeatCount="indefinite" values="M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,132c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-122,0,-122 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,122,0,122zM0,132;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="97" y="17" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.2;0.533333;0.866667;1" repeatCount="indefinite" values="97;97;150;202;202"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.2;0.533333;0.866667;1" repeatCount="indefinite" values="17;17;70;122;122"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="23" height="1" x="-11.5" y="-.5" opacity="0" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.2;0.533333;0.866667;1" repeatCount="indefinite" values="-0.5;-0.5;-71;-0.5;-0.5"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.2;0.533333;0.866667;1" repeatCount="indefinite" values="1;1;142;1;1"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.2;0.213333;0.853333;0.866667;1" repeatCount="indefinite" values="0;0;1;1;0;0"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 .5c0 .274.226.5.5.5h22c.274 0 .5-.226.5-.5s-.226-.5-.5-.5H.5C.226 0 0 .226 0 .5zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.55 0.085 0.68 0.53;0.25 0.46 0.45 0.94;0.42 0 0.58 1" keyTimes="0;0.2;0.533333;0.866667;1" repeatCount="indefinite" values="M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,132c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-122,0,-122 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,122,0,122zM0,132;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="58" y="58" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.533333;0.866667;1" repeatCount="indefinite" values="58;58;110;110"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.533333;0.866667;1" repeatCount="indefinite" values="58;58;110;110"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="60" height="1" x="-30" y="-.5" opacity="0" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.533333;0.866667;1" repeatCount="indefinite" values="-0.5;-0.5;-71;-71"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.533333;0.866667;1" repeatCount="indefinite" values="1;1;142;142"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.533333;0.546667;1" repeatCount="indefinite" values="0;0;1;1"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 .5c0 .274.226.5.5.5h59c.274 0 .5-.226.5-.5s-.226-.5-.5-.5H.5C.226 0 0 .226 0 .5zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.533333;0.866667;1" repeatCount="indefinite" values="M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,59,0,59,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-59,0,-59,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,132c0,5.486,4.514,10,10,10 0,0,40,0,40,0 5.486,0,10,-4.514,10,-10 0,0,0,-122,0,-122 0,-5.486,-4.514,-10,-10,-10 0,0,-40,0,-40,0 -5.486,-0,-10,4.514,-10,10 0,0,0,122,0,122zM0,132;M0,132c0,5.486,4.514,10,10,10 0,0,40,0,40,0 5.486,0,10,-4.514,10,-10 0,0,0,-122,0,-122 0,-5.486,-4.514,-10,-10,-10 0,0,-40,0,-40,0 -5.486,-0,-10,4.514,-10,10 0,0,0,122,0,122zM0,132"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="119" y="203" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955" keyTimes="0;0.666667;1" repeatCount="indefinite" values="119;119;68"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955" keyTimes="0;0.666667;1" repeatCount="indefinite" values="203;203;152"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="23" height="1" x="-11.5" y="-.5" opacity="0" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955" keyTimes="0;0.666667;1" repeatCount="indefinite" values="-0.5;-0.5;-30"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955" keyTimes="0;0.666667;1" repeatCount="indefinite" values="1;1;60"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.666667;0.68;1" repeatCount="indefinite" values="0;0;1;1"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 .5c0 .274.226.5.5.5h22c.274 0 .5-.226.5-.5s-.226-.5-.5-.5H.5C.226 0 0 .226 0 .5zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955" keyTimes="0;0.666667;1" repeatCount="indefinite" values="M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,50c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-40,0,-40 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,40,0,40zM0,50"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+  <svg width=".01" height=".01" x="97" y="17" overflow="visible">
+    <animate fill="currentColor" attributeName="x" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.6;0.933333;1" repeatCount="indefinite" values="97;97;150;150"/>
+    <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.6;0.933333;1" repeatCount="indefinite" values="17;17;70;70"/>
+    <g>
+      <g transform="rotate(-45)">
+        <svg width="23" height="1" x="-11.5" y="-.5" opacity="0" overflow="visible">
+          <animate fill="currentColor" attributeName="y" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.6;0.933333;1" repeatCount="indefinite" values="-0.5;-0.5;-30;-30"/>
+          <animate fill="currentColor" attributeName="height" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.6;0.933333;1" repeatCount="indefinite" values="1;1;60;60"/>
+          <animate fill="currentColor" attributeName="opacity" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.6;0.613333;1" repeatCount="indefinite" values="0;0;1;1"/>
+          <g>
+            <g>
+              <path fill="currentColor" d="M0 .5c0 .274.226.5.5.5h22c.274 0 .5-.226.5-.5s-.226-.5-.5-.5H.5C.226 0 0 .226 0 .5zm0 0">
+                <animate attributeName="d" calcMode="spline" dur="1.5s" keySplines="0 0 1 1;0.455 0.03 0.515 0.955;0.42 0 0.58 1" keyTimes="0;0.6;0.933333;1" repeatCount="indefinite" values="M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,0.5c-0,0.274,0.226,0.5,0.5,0.5 0,0,22,0,22,0 0.274,0,0.5,-0.226,0.5,-0.5 0,0,0,0,0,0 0,-0.274,-0.226,-0.5,-0.5,-0.5 0,0,-22,0,-22,0 -0.274,-0,-0.5,0.226,-0.5,0.5 0,0,0,-0,0,-0zM0,0.5;M0,50c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-40,0,-40 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,40,0,40zM0,50;M0,50c0,5.486,4.514,10,10,10 0,0,3,0,3,0 5.486,0,10,-4.514,10,-10 0,0,0,-40,0,-40 0,-5.486,-4.514,-10,-10,-10 0,0,-3,0,-3,0 -5.486,-0,-10,4.514,-10,10 0,0,0,40,0,40zM0,50"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </svg>
+</svg>
