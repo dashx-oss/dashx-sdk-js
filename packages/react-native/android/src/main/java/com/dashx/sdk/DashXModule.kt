@@ -11,6 +11,7 @@ class DashXModule(private val reactContext: ReactApplicationContext) : ReactCont
     private val tag = DashXClient::class.java.simpleName
     private var dashXClient: DashXClient = DashXClient.instance
 
+
     override fun getName(): String {
         return "DashX"
     }
@@ -23,6 +24,7 @@ class DashXModule(private val reactContext: ReactApplicationContext) : ReactCont
     @ReactMethod
     fun setup(options: ReadableMap) {
         dashXClient.setPublicKey(options.getString("publicKey")!!)
+        dashXClient.setAccountType(options.getString("accountType")!!)
 
         if (options.hasKey("trackAppLifecycleEvents") && options.getBoolean("trackAppLifecycleEvents")) {
             DashXExceptionHandler.enable()
@@ -36,6 +38,16 @@ class DashXModule(private val reactContext: ReactApplicationContext) : ReactCont
         if (options.hasKey("baseUri")) {
             options.getString("baseUri")?.let { it -> dashXClient.setBaseURI(it) }
         }
+
+        if (options.hasKey("targetEnvironment")) {
+            options.getString("targetEnvironment")?.let { it -> dashXClient.setTargetEnvironment(it) }
+        }
+
+        if (options.hasKey("targetInstallation")) {
+            options.getString("targetInstallation")?.let { it -> dashXClient.setTargetInstallation(it) }
+        }
+
+        dashXClient.createApolloClient()
 
         FirebaseInstanceId.getInstance().instanceId
             .addOnCompleteListener(OnCompleteListener { task ->
@@ -68,11 +80,6 @@ class DashXModule(private val reactContext: ReactApplicationContext) : ReactCont
     @ReactMethod
     fun screen(screenName: String, data: ReadableMap?) {
         dashXClient.screen(screenName, data)
-    }
-
-    @ReactMethod
-    fun content(contentType: String, options: ReadableMap) {
-        dashXClient.content(contentType, options)
     }
 
     @ReactMethod

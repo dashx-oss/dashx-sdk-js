@@ -2,25 +2,24 @@ package com.dashx.sdk
 
 import android.content.SharedPreferences
 import android.os.Build
+import com.apollographql.apollo.ApolloCall
+import com.apollographql.apollo.ApolloClient
+import com.apollographql.apollo.api.Input
+import com.apollographql.apollo.exception.ApolloException
+import com.dashx.IdentifyAccountMutation
+import com.dashx.SubscribeContactMutation
+import com.dashx.TrackEventMutation
+import com.dashx.type.ContactKind
+import com.dashx.type.IdentifyAccountInput
+import com.dashx.type.SubscribeContactInput
+import com.dashx.type.TrackEventInput
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.bridge.WritableMap
 import com.facebook.react.modules.core.DeviceEventManagerModule.RCTDeviceEventEmitter
 import com.google.firebase.messaging.RemoteMessage
-import com.google.gson.FieldNamingPolicy
-import com.google.gson.GsonBuilder
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.Headers
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.Response
-import org.json.JSONException
-import java.io.IOException
-import java.util.HashMap
+import okhttp3.*
 import java.util.UUID
 
 
@@ -28,23 +27,42 @@ class DashXClient private constructor() {
     private val tag = DashXClient::class.java.simpleName
 
     // Setup variables
-    private var baseURI: String = "https://api.dashx.com/v1"
+    private var baseURI: String = "https://api.dashx.com/graphql"
     private var publicKey: String? = null
+    private var targetEnvironment: String? = null
+    private var targetInstallation: String? = null
 
     // Account variables
     private var anonymousUid: String? = null
     private var uid: String? = null
     private var deviceToken: String? = null
     private var identityToken: String? = null
+    private var accountType: String? = null
 
-    private val httpClient = OkHttpClient()
-    private val json = "application/json; charset=utf-8".toMediaType()
     private val dashXNotificationFilter = "DASHX_PN_TYPE"
+
+    private var apolloClient = getApolloClient()
 
     var reactApplicationContext: ReactApplicationContext? = null
 
     fun setBaseURI(baseURI: String) {
         this.baseURI = baseURI
+    }
+
+    fun createApolloClient() {
+        apolloClient = getApolloClient()
+    }
+
+    fun setTargetEnvironment(targetEnvironment: String) {
+        this.targetEnvironment = targetEnvironment
+    }
+
+    fun setTargetInstallation(targetInstallation: String) {
+        this.targetEnvironment = targetInstallation
+    }
+
+    fun setAccountType(accountType: String) {
+        this.accountType = accountType
     }
 
     fun setPublicKey(publicKey: String) {
@@ -58,7 +76,34 @@ class DashXClient private constructor() {
 
     fun setIdentityToken(identityToken: String) {
         this.identityToken = identityToken
+        createApolloClient()
         subscribe()
+    }
+
+    private fun getApolloClient(): ApolloClient {
+        return ApolloClient.builder()
+            .serverUrl(baseURI)
+            .okHttpClient(OkHttpClient.Builder()
+                .addInterceptor {
+                    val requestBuilder = it.request().newBuilder()
+                        .addHeader("X-Public-Key", publicKey!!)
+
+                    if (targetEnvironment != null) {
+                        requestBuilder.addHeader("X-Target-Environment", targetEnvironment!!)
+                    }
+
+                    if (targetInstallation != null) {
+                        requestBuilder.addHeader("X-Target-Installation", targetInstallation!!)
+                    }
+
+                    if (identityToken != null) {
+                        requestBuilder.addHeader("X-Identity-Token", identityToken!!)
+                    }
+
+                    return@addInterceptor it.proceed(requestBuilder.build())
+                }
+                .build())
+            .build()
     }
 
     fun generateAnonymousUid(regenerate: Boolean = false) {
@@ -103,23 +148,6 @@ class DashXClient private constructor() {
             ?.emit(eventName, params)
     }
 
-    private fun <T> makeHttpRequest(uri: String, body: T, extraHeaders: Headers? = null, callback: Callback) {
-        val headerBuilder = Headers.Builder().add("X-Public-Key", publicKey!!)
-        extraHeaders?.let { it -> headerBuilder.addAll(it) }
-
-        val gson = GsonBuilder()
-            .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-            .create()
-
-        val request: Request = Request.Builder()
-            .url(baseURI + uri)
-            .headers(headerBuilder.build())
-            .post(gson.toJson(body).toString().toRequestBody(json))
-            .build()
-
-        httpClient.newCall(request).enqueue(callback)
-    }
-
     fun identify(uid: String?, options: ReadableMap?) {
         if (uid != null) {
             this.uid = uid
@@ -131,37 +159,31 @@ class DashXClient private constructor() {
             throw Exception("Cannot be called with null, either pass uid: string or options: object")
         }
 
-        val identifyRequest = try {
-            val optionsHashMap = options.toHashMap() as? HashMap<String, String?>
-            IdentifyRequest(
-                optionsHashMap?.get("firstName"),
-                optionsHashMap?.get("lastName"),
-                optionsHashMap?.get("email"),
-                optionsHashMap?.get("phone"),
-                anonymousUid
-            )
-        } catch (e: Exception) {
-            DashXLog.d(tag, "Encountered an error while parsing data")
-            e.printStackTrace()
-            return
-        }
+        val identifyAccountInput = IdentifyAccountInput("environment Id",
+            Input.fromNullable(accountType),
+            Input.fromNullable(uid),
+            Input.fromNullable(anonymousUid),
+            Input.fromNullable(options.getString("email")),
+            Input.fromNullable(options.getString("phone")),
+            Input.fromNullable(options.getString("name")),
+            Input.fromNullable(options.getString("firstName")),
+            Input.fromNullable(options.getString("lastName"))
+        )
+        val identifyAccountMutation = IdentifyAccountMutation(identifyAccountInput)
 
-        makeHttpRequest(uri = "/identify", body = identifyRequest, callback = object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                DashXLog.d(tag, "Could not identify with: $uid $options")
-                e.printStackTrace()
-            }
-
-            @Throws(IOException::class)
-            override fun onResponse(call: Call, response: Response) {
-                if (!response.isSuccessful) {
-                    DashXLog.d(tag, "Encountered an error during identify(): " + response.body?.string())
-                    return
+        Network.instance.client
+            .mutate(identifyAccountMutation)
+            .enqueue(object : ApolloCall.Callback<IdentifyAccountMutation.Data>() {
+                override fun onFailure(e: ApolloException) {
+                    DashXLog.d(tag, "Could not identify with: $uid $options")
+                    e.printStackTrace()
                 }
 
-                DashXLog.d(tag, "Sent identify: $identifyRequest")
-            }
-        })
+                override fun onResponse(response: com.apollographql.apollo.api.Response<IdentifyAccountMutation.Data>) {
+                    val identifyResponse = response.data?.identifyAccount
+                    DashXLog.d(tag, "Sent identify: $identifyResponse")
+                }
+            })
     }
 
     fun reset() {
@@ -170,32 +192,35 @@ class DashXClient private constructor() {
     }
 
     fun track(event: String, data: ReadableMap?) {
-        val trackRequest = try {
-            TrackRequest(event, convertMapToJson(data), uid, anonymousUid)
+        val jsonData = try {
+            convertMapToJson(data)
         } catch (e: Exception) {
             DashXLog.d(tag, "Encountered an error while parsing data")
             e.printStackTrace()
             return
         }
 
-        makeHttpRequest(uri = "/track", body = trackRequest, callback = object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                DashXLog.d(tag, "Could not track: $event $data")
-                e.printStackTrace()
-            }
+        if (accountType == null) {
+            DashXLog.d(tag, "Account type not set. Aborting request")
+            return
+        }
 
-            @Throws(IOException::class)
-            override fun onResponse(call: Call, response: Response) {
-                if (!response.isSuccessful) {
-                    DashXLog.d(tag, "Encountered an error during track():" + response.body?.string())
-                    return
+        val trackEventInput = TrackEventInput(accountType!!, event, Input.fromNullable(uid), Input.fromNullable(anonymousUid), Input.fromNullable(jsonData));
+        val trackEventMutation = TrackEventMutation(trackEventInput)
+
+        Network.instance.client
+            .mutate(trackEventMutation)
+            .enqueue(object : ApolloCall.Callback<TrackEventMutation.Data>() {
+                override fun onFailure(e: ApolloException) {
+                    DashXLog.d(tag, "Could not track: $event $data")
+                    e.printStackTrace()
                 }
 
-                val trackResponse = response.body?.string()
-
-                DashXLog.d(tag, "Sent event: $trackRequest, $trackResponse")
-            }
-        })
+                override fun onResponse(response: com.apollographql.apollo.api.Response<TrackEventMutation.Data>) {
+                    val trackResponse = response.data?.trackEvent
+                    DashXLog.d(tag, "Sent event: $event, $trackResponse")
+                }
+            })
     }
 
     fun trackAppStarted(fromBackground: Boolean = false) {
@@ -255,40 +280,6 @@ class DashXClient private constructor() {
         track(INTERNAL_EVENT_APP_SCREEN_VIEWED, data)
     }
 
-    fun content(contentType: String, options: ReadableMap) {
-        val contentRequest = try {
-            ContentRequest(
-                contentType,
-                options.getStringIfPresent("returnType"),
-                convertMapToJson(options.getMapIfPresent("filter")),
-                convertMapToJson(options.getMapIfPresent("order")),
-                options.getIntIfPresent("limit"),
-                options.getIntIfPresent("page")
-            )
-        } catch (e: Exception) {
-            DashXLog.d(tag, "Encountered an error while parsing data")
-            e.printStackTrace()
-            return
-        }
-
-        makeHttpRequest(uri = "/content", body = contentRequest, callback = object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                DashXLog.d(tag, "Could not identify with: $uid $options")
-                e.printStackTrace()
-            }
-
-            @Throws(IOException::class)
-            override fun onResponse(call: Call, response: Response) {
-                if (!response.isSuccessful) {
-                    DashXLog.d(tag, "Encountered an error during content(): " + response.body?.string())
-                    return
-                }
-
-                DashXLog.d(tag, "Sent content: $contentRequest")
-            }
-        })
-    }
-
     private fun subscribe() {
         if (deviceToken == null || identityToken == null) {
             DashXLog.d(tag,
@@ -296,36 +287,28 @@ class DashXClient private constructor() {
             return
         }
 
-        val deviceKind = "ANDROID"
+        val subscribeContactInput = SubscribeContactInput(
+            "environmentId",
+            uid!!,
+            Input.fromNullable("Android"),
+            ContactKind.ANDROID,
+            deviceToken!!
+        )
+        val subscribeContactMutation = SubscribeContactMutation(subscribeContactInput)
 
-        val subscribeRequest = try {
-            SubscribeRequest(deviceToken!!, deviceKind, uid, anonymousUid)
-        } catch (e: JSONException) {
-            DashXLog.d(tag, "Encountered an error while parsing data")
-            e.printStackTrace()
-            return
-        }
-
-        val headers = Headers.Builder().add("X-Identity-Token", identityToken!!).build()
-
-        makeHttpRequest("/subscribe", subscribeRequest, headers, object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                DashXLog.d(tag, "Could not subscribe: $deviceToken")
-                e.printStackTrace()
-            }
-
-            @Throws(IOException::class)
-            override fun onResponse(call: Call, response: Response) {
-                if (!response.isSuccessful) {
-                    DashXLog.d(tag, "Encountered an error during subscribe():" + response.body?.string())
-                    return
+        Network.instance.client
+            .mutate(subscribeContactMutation)
+            .enqueue(object : ApolloCall.Callback<SubscribeContactMutation.Data>() {
+                override fun onFailure(e: ApolloException) {
+                    DashXLog.d(tag, "Could not subscribe: $deviceToken")
+                    e.printStackTrace()
                 }
 
-                val subscribeResponse = response.body?.string()
-
-                DashXLog.d(tag, "Subscribed: $deviceToken, $subscribeResponse")
-            }
-        })
+                override fun onResponse(response: com.apollographql.apollo.api.Response<SubscribeContactMutation.Data>) {
+                    val subscribeContactResponse = response.data?.subscribeContact
+                    DashXLog.d(tag, "Subscribed: $deviceToken, $subscribeContactResponse")
+                }
+            })
     }
 
     companion object {
