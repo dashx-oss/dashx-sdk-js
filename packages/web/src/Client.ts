@@ -24,7 +24,7 @@ class Client {
 
   accountUid: string | null = null
 
-  accountType: string
+  accountType: string | null = null
 
   targetInstallation?: string
 
@@ -36,10 +36,10 @@ class Client {
 
   baseUri: string
 
-  constructor({ publicKey, baseUri = 'https://api.dashx.com/graphql', targetEnvironment, targetInstallation, accountType = 'individual' }: ClientParams) {
+  constructor({ publicKey, baseUri = 'https://api.dashx.com/graphql', targetEnvironment, targetInstallation, accountType }: ClientParams) {
     this.baseUri = baseUri
     this.publicKey = publicKey
-    this.accountType = accountType
+    this.accountType = accountType as string
     this.targetEnvironment = targetEnvironment
     this.targetInstallation = targetInstallation
     this.context = generateContext()
@@ -89,7 +89,10 @@ class Client {
     }
 
     this.accountUid = options?.uid as string
-    this.accountType = options?.accountType as string
+
+    if (options?.accountType) {
+      this.accountType = options?.accountType as string
+    }
 
     const params = {
       uid: options?.uid,
